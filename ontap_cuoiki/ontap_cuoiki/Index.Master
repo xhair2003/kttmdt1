@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="ontap_cuoiki.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Index.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="categories">
+                <h2>Danh mục</h2>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("MaDM") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TenDM") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="main_content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="login_form">
+                <asp:Login ID="Login1" runat="server"></asp:Login>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
